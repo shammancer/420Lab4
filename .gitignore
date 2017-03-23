@@ -1,3 +1,10 @@
+# Compiled Files
+datatrim
+data_input
+data_output
+main
+serialtester
+
 # Object files
 *.o
 *.ko
