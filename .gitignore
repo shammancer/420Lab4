@@ -1,5 +1,6 @@
 # Temp Files
 *.tmp
+*.swp
 
 # Compiled Files
 datatrim
