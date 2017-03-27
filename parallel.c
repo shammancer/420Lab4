@@ -65,7 +65,7 @@ int main (int argc, char* argv[]){
 
     damp_const = (1.0 - DAMPING_FACTOR) / nodecount;
 
-    for ( i = 0; i < nodecount; ++i)
+    for ( i = 0; i < localcount; ++i)
         r_local[i] = 1.0 / nodecount;
 
     // CORE CALCULATION
@@ -98,14 +98,19 @@ int main (int argc, char* argv[]){
             0, MPI_COMM_WORLD);
     GET_TIME(end);
 
-    printf("R%d: A\n", rank);
+    node_destroy(nodehead, nodecount);
+    free(num_in_links); free(num_out_links);
+    free(r_local);
+
     if(rank == 0){
         res = Lab4_saveoutput(r_pre, nodecount, end - start);
     } else {
         res = 0;
     }
-    printf("R%d: B(%d)\n", rank, res);
+
+    free(r_pre); 
 
     MPI_Finalize();
+    printf("R%d: Completed Successfully\n", rank);
     return res; 
 }
