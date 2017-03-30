@@ -41,7 +41,6 @@ int main (int argc, char* argv[]){
     double damp_const;
 
     int comm_size, rank;
-    int part_size;
     int res = 0;
 
     double local_error, global_error;
