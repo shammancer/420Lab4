@@ -18,8 +18,8 @@
 # Welcome
 echo "=====Evaluation for Lab 4 code.====="
 # Parameters
-Sizes=(5300 13000)
-Cores=(1 4)
+Sizes=(5300 13000 281889)
+Cores=(1 2 4 8)
 Duplicates=4
 
 # Create temporary directory for testing and copy all exacutable to there.
